@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Wordle Demo</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<div id="vis"></div>
+	</body>
+	<script src="js/d3.min.js"></script>
+	<script src="js/cloud.layout.js"></script>
+	<script src="js/wordle.js"></script>
+	<script>
+		var wordle=new Wordle({id:'#vis'}).loadData([
+				{
+					key:'word1',
+					value:20
+				},
+				{
+					key:'word2',
+					value:10
+				},
+				{
+					key:'word3',
+					value:8
+				},
+				{
+					key:'word4',
+					value:50
+				},
+				{
+					key:'word5',
+					value:3
+				}
+			]).create();
+
+		wordle.onclickText=function(ele){
+			console.log(ele.key,ele.value)
+		}
+	</script>
+</html>
